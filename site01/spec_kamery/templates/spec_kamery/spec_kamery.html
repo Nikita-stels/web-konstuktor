@@ -1,0 +1,434 @@
+{% extends "base_01.html" %}
+
+{% block title %}
+Спецификация камеры
+{% endblock %}
+
+{% block content %}
+<br>
+
+<caption> Размеры колодца.</caption>
+<table border="1">
+    <tr>
+        <td> Длина (мм)</td>
+        <td><input id="dlina" type="text" size="5" value="1000"></td>
+    <tr>
+        <td> Ширина (мм)</td>
+        <td><input id="shirina" type="text" size="5" value="1000"></td>
+    <tr>
+        <td> Высота (мм)</td>
+        <td><input id="vysota" type="text" size="5" value="1300"></td>
+    <tr>
+        <td> Толщина стенки (мм)</td>
+        <td><input id="tolshina_stenki" type="text" size="5" value="300"></td>
+
+    <tr>
+        <td> Арматура А500С</td>
+        <td>
+
+            <select type="text" id="armatura_1">
+                <option value="12">&#8960; 12</option>
+                <option value="14">&#8960; 14</option>
+                <option value="16">&#8960; 16</option>
+            </select>
+
+        </td>
+
+    <tr>
+        <td> Гильза-1 (мм)</td>
+        <td><input id="gilza_1" type="text" size="5" value="530"></td>
+    <tr>
+        <td> Гильза-2 (мм)</td>
+        <td><input id="gilza_2" type="text" size="5" value="0"></td>
+</table>
+
+<br>
+
+<input type="button" value="Посчитать спецификацию" onclick="addition();"> <!-- Кнопка -->
+<br>
+<br>
+<caption> Спецификация колодца.</caption>
+<table border="1">
+
+    <tr>
+        <th> Поз.</th>
+        <th> Обозначение.</th>
+        <th> Наименование.</th>
+        <th> Кол.</th>
+        <th> Масса <br> ед, кг</th>
+        <th> Приме- <br> чание</th>
+    </tr>
+
+    <tr class="poz">
+        <td></td>
+        <td></td>
+        <td> К-1</td>
+        <td class="poz"> 1</td>
+        <td class="poz"><p id=" massa_vsego_arm "></p></td>
+        <td></td>
+    <tr class="poz">
+        <td> 1</td>
+        <td></td>
+        <td class="nam"> Пруток &#8960;
+            <output class="item-span"></output>
+            А500С ГОСТ Р 52544-2006 L=
+            <output id=" dlina_poz_1 "></output>
+        </td>
+        <td><p id=" kol_poz_1 "></p></td>
+        <td><p id=" massa_ed_poz_1 "></p></td>
+        <td><p id=" massa_poz_1 "></p></td>
+    <tr class="poz">
+        <td> 2</td>
+        <td></td>
+        <td class="nam"> Пруток &#8960;
+            <output class="item-span"></output>
+            А500С ГОСТ Р 52544-2006 L=
+            <output id=" dlina_poz_2 "></output>
+        </td>
+        <td><p id=" kol_poz_2 "></p></td>
+        <td><p id=" massa_ed_poz_2 "></p></td>
+        <td><p id=" massa_poz_2 "></p></td>
+    <tr class="poz">
+        <td> 3</td>
+        <td></td>
+        <td class="nam"> Пруток &#8960;
+            <output class="item-span"></output>
+            А500С ГОСТ Р 52544-2006 L=
+            <output id=" dlina_poz_3 "></output>
+        </td>
+        <td><p id=" kol_poz_3 "></p></td>
+        <td><p id=" massa_ed_poz_3 "></p></td>
+        <td><p id=" massa_poz_3 "></p></td>
+    <tr class="poz">
+        <td> 4</td>
+        <td></td>
+        <td class="nam"> Пруток &#8960;
+            <output class="item-span"></output>
+            А500С ГОСТ Р 52544-2006 L=
+            <output id=" dlina_poz_4 "></output>
+        </td>
+        <td><p id=" kol_poz_4 "></p></td>
+        <td><p id=" massa_ed_poz_4 "></p></td>
+        <td><p id=" massa_poz_4 "></p></td>
+    <tr class="poz">
+        <td> 5</td>
+        <td></td>
+        <td class="nam"> Пруток &#8960;
+            <output class="item-span"></output>
+            А500С ГОСТ Р 52544-2006 L=
+            <output id=" dlina_poz_5 "></output>
+        </td>
+        <td><p id=" kol_poz_5 "></p></td>
+        <td><p id=" massa_ed_poz_5 "></p></td>
+        <td><p id=" massa_poz_5 "></p></td>
+    <tr class="poz">
+        <td> 6</td>
+        <td></td>
+        <td class="nam"> Пруток &#8960;
+            <output class="item-span"></output>
+            А500С ГОСТ Р 52544-2006 L=
+            <output id=" dlina_poz_6 "></output>
+        </td>
+        <td><p id=" kol_poz_6 "></p></td>
+        <td><p id=" massa_ed_poz_6 "></p></td>
+        <td><p id=" massa_poz_6 "></p></td>
+
+    <tr class="poz">
+        <td> 8</td>
+        <td></td>
+        <td class="nam"> Пруток &#8960;
+            <output class="item-span"></output>
+            А500С ГОСТ Р 52544-2006 L=
+            <output id=" dlina_poz_8 "></output>
+        </td>
+        <td><p id=" kol_poz_8 "></p></td>
+        <td><p id=" massa_ed_poz_8 "></p></td>
+        <td><p id=" massa_poz_8 "></p></td>
+    <tr class="poz">
+        <td> 9</td>
+        <td></td>
+        <td class="nam"> Пруток &#8960;
+            <output class="item-span"></output>
+            А500С ГОСТ Р 52544-2006 L=
+            <output id=" dlina_poz_9 "></output>
+        </td>
+        <td><p id=" kol_poz_9 "></p></td>
+        <td><p id=" massa_ed_poz_9 "></p></td>
+        <td><p id=" massa_poz_9 "></p></td>
+    <tr class="poz">
+        <td> 10</td>
+        <td class="nam"></td>
+        <td class="nam"> Пруток &#8960; 8 А240 ГОСТ 5781-82 L=
+            <output id=" dlina_poz_10 "></output>
+        </td>
+        <td><p id=" kol_poz_10 "></p></td>
+        <td><p id=" massa_ed_poz_10 "></p></td>
+        <td><p id=" massa_poz_10 "></p></td>
+    <tr class="poz">
+        <td> 11</td>
+        <td class="nam"></td>
+        <td class="nam"> Пруток &#8960; 8 А240 ГОСТ 5781-82 L=
+            <output id=" dlina_poz_11 "></output>
+        </td>
+        <td><p id=" kol_poz_11 "></p></td>
+        <td><p id=" massa_ed_poz_11 "></p></td>
+        <td><p id=" massa_poz_11 "></p></td>
+    <tr class="poz">
+        <td> 12</td>
+        <td class="nam"> ГОСТ 26633-2015</td>
+        <td class="nam"> Бетон В25, F150, W4. (м3)</td>
+        <td></td>
+        <td></td>
+        <td class="poz"><p id=" obem_betona_B25 "></td>
+    <tr class="poz">
+        <td> 13</td>
+        <td class="nam"> ГОСТ 26633-2015</td>
+        <td class="nam"> Бетон В7.5. (м3)</td>
+        <td></td>
+        <td></td>
+        <td class="poz"><p id=" obem_betona_B7_5 "></td>
+
+
+</table>
+
+<br>
+<caption> Спецификация гидроизоляции колодца К-1.</caption>
+<table border="1">
+
+    <tr>
+        <th> Поз.</th>
+        <th> Обозначение.</th>
+        <th> Наименование.</th>
+        <th> Кол.</th>
+        <th> Масса <br> ед, кг</th>
+        <th> Приме- <br> чание</th>
+    </tr>
+    <!-- Устройство внутренней гидроизоляции. (МОСГАЗовская) -->
+    <tr class="poz">
+        <td></td>
+        <td></td>
+        <td width="490"><u> <b> Устройство внутренней гидроизоляции. (м2) </u></td>
+        <td class="poz"></td>
+        <td class="poz"></td>
+        <td><p id=" ploschad_kam_vnut "></p></td>
+    <tr class="poz">
+        <td> 1.</td>
+        <td></td>
+        <td class="nam"> Устройство галтели в местах стыков ж/б плит и стен "Максрайт 500"</td>
+        <td><p id=" galtel "></p></td>
+        <td> 2.5 кг/м</td>
+        <td><p id=" galtel_1 "></p></td>
+    <tr class="poz">
+        <td> 2.</td>
+        <td></td>
+        <td class="nam"> Полимерное покрытие "Пнайкон" в 2-а слоя толщиной 2,5 мм</td>
+        <td><p id=" pnajkon "></p></td>
+        <td> 6 кг/м2</td>
+        <td><p id=" pnajkon_1 "></p></td>
+
+        <!-- Устройство гидроизоляции ввода. -->
+    <tr class="poz">
+        <td></td>
+        <td></td>
+        <td><u> <b> Устройство гидроизоляции ввода. </u></td>
+        <td class="poz"></td>
+        <td class="poz"></td>
+        <td></td>
+    <tr class="poz">
+        <td> 3.</td>
+        <td></td>
+        <td class="nam"> Расшивка штрабы вокруг гильз. (м.п.)</td>
+        <td></td>
+        <td></td>
+        <td><p id=" dlina_shtroby "></p></td>
+    <tr class="poz">
+        <td> 4.</td>
+        <td></td>
+        <td class="nam"> Заполнение штрабы материалом "Максрайт 500"</td>
+        <td><p id=" zap_shtrob "></p></td>
+        <td> 2 кг/м</td>
+        <td><p id=" zap_shtrob_1 "></p></td>
+    <tr class="poz">
+        <td> 5.</td>
+        <td></td>
+        <td class="nam"> Устройство набухающего профиля "GX2004"</td>
+        <td><p id=" nabuh_prof "></p></td>
+        <td> 1.2 кг/м</td>
+        <td><p id=" nabuh_prof_1 "></p></td>
+    <tr class="poz">
+        <td> 6.</td>
+        <td></td>
+        <td class="nam"> Заделка концов гильз. "Герметик Полидек ПУ 174"</td>
+        <td><p id=" polidek "></p></td>
+        <td> 500 мл/1м</td>
+        <td><p id=" polidek_1 "></p></td>
+
+        <!-- Устройство внешней гидроизоляции. (МОСГАЗовская) -->
+    <tr class="poz">
+        <td></td>
+        <td></td>
+        <td><u><b> Устройство внешней гидроизоляции (м2) (МОСГАЗовская) </u></td>
+        <td class="poz"></td>
+        <td class="poz"></td>
+        <td><p id=" ploschad_kam_0 "></td>
+    <tr class="poz">
+        <td> 7.</td>
+        <td></td>
+        <td class="nam"> Полиэтиленовая пленка (м2)</td>
+        <td></td>
+        <td></td>
+        <td><p id=" plenka "></td>
+    <tr class="poz">
+        <td> 8.</td>
+        <td></td>
+        <td class="nam"> Геотекстиль 300 г/м2 (м2)</td>
+        <td></td>
+        <td></td>
+        <td><p id=" geo_tekstil "></td>
+    <tr class="poz">
+        <td> 9.</td>
+        <td></td>
+        <td class="nam"> Полимочевина "Эластокоат С 6335/101" толщиной 3 мм</td>
+        <td><p id=" pili_moch "></p> </td>
+        <td> 3.5 кг/м2</td>
+        <td><p id=" pili_moch_1 "> </p> </td>
+    <tr class="poz">
+        <td> 10.</td>
+        <td></td>
+        <td class="nam"> Устройство набухающего профиля "GX2004" (м.п.)</td>
+        <td></td>
+        <td></td>
+        <td><p id=" prof_01 "></p></td>
+    <tr class="poz">
+        <td> 11.</td>
+        <td></td>
+        <td class="nam"> Бентонитовый шнур "GX1925" (м.п.)</td>
+        <td></td>
+        <td></td>
+        <td><p id=" shnur "> </p> </td>
+    <tr class="poz">
+        <td> 12.</td>
+        <td></td>
+        <td class="nam"> Герметик " Полидек ПУ 174"</td>
+        <td><p id=" germ_sit "></p></td>
+        <td> 500 мл/м</td>
+        <td><p id=" germ_sit_1 "> </p> </td>
+    <tr class="poz">
+        <td> 13.</td>
+        <td></td>
+        <td class="nam"> Пенополиуретан "Эластоспрей 1612/34" толщиной 30 мм</td>
+        <td><p id=" peno_pol ">   </p> </td>
+        <td> 2.5 кг/м2</td>
+        <td><p id=" peno_pol_1 "> </p> </td>
+    <tr class="poz">
+        <td> 14.</td>
+        <td></td>
+        <td class="nam"> Песок(м3)</td>
+        <td></td>
+        <td></td>
+        <td><p id=" pesoc_sit "> </p>  </td>
+    <tr class="poz">
+        <td> 15.</td>
+        <td></td>
+        <td class="nam"> Цементно песчаный раствор М150 (м3)</td>
+        <td></td>
+        <td></td>
+        <td> 1.3</td>
+
+
+</table>
+
+
+<br>
+<caption> Спецификация гидроизоляции колодца К-1.</caption>
+<table border="1">
+
+    <tr>
+        <th> Поз.</th>
+        <th> Обозначение.</th>
+        <th> Наименование.</th>
+        <th> Кол.</th>
+        <th> Масса <br> ед, кг</th>
+        <th> Приме- <br> чание</th>
+    </tr>
+
+
+    <!-- Устройство внешней гидроизоляции. [для МГЭ] -->
+    <tr class="poz">
+        <td></td>
+        <td></td>
+        <td width="490"><u> <b> Устройство внешней гидроизоляции. (м2) [для МГЭ]</td>
+        <td class="poz"></td>
+        <td class="poz"></td>
+        <td><p id=" ploschad_kam "></td>
+    <tr class="poz">
+        <td></td>
+        <td></td>
+        <td class="nam"> Полиэтиленовая пленка (м2)</td>
+        <td></td>
+        <td></td>
+        <td><p id=" plenka_MEG "></td>
+
+    <tr class="poz">
+        <td></td>
+        <td></td>
+        <td class="nam"> Праймер битумный "Технониколь № 01"</td>
+        <td><p id=" ploschad_bitum ">            </p> </td>
+        <td> 0.3л/м2</td>
+        <td><p id=" bitum "> </p>                  </td>
+    <tr class="poz">
+        <td></td>
+        <td></td>
+        <td class="nam">Рулонная гидроизоляция "Техноэласт ЭПП"</td>
+        <td><p id=" ploschad_rul_gid ">          </p> </td>
+        <td> 1.2м2/м2</td>
+        <td><p id=" ploschad_rul_gid_1 "> </p>    </td>
+    <tr class="poz">
+        <td></td>
+        <td></td>
+        <td class="nam"> Геомембрана "Дрениз"</td>
+        <td><p id=" ploschad_rul_shpona ">       </p> </td>
+        <td> 1.2м2/м2</td>
+        <td><p id=" ploschad_rul_shpona_1 "> </p> </td>
+    <tr class="poz">
+        <td></td>
+        <td></td>
+        <td class="nam"> Устройство набухающего профиля "GX2004" (м.п.)</td>
+        <td></td>
+        <td></td>
+        <td><p id=" prof "></p></td>
+    <tr class="poz">
+        <td></td>
+        <td></td>
+        <td class="nam"> Герметик "Полидек ПУ 174"</td>
+        <td><p id=" germ "></p></td>
+        <td> 500 мл/м</td>
+        <td><p id=" germ_1 "></p></td>
+    <tr class="poz">
+        <td></td>
+        <td></td>
+        <td class="nam"> Бентонитовый шнур "GX1925" (м.п.)</td>
+        <td></td>
+        <td></td>
+        <td><p id=" bent_shnur "></p></td>
+    <tr class="poz">
+        <td></td>
+        <td></td>
+        <td class="nam"> Песок (м3)</td>
+        <td></td>
+        <td></td>
+        <td><p id=" obem_peska "></p></td>
+    <tr class="poz">
+        <td></td>
+        <td></td>
+        <td class="nam"> Цементно песчаный раствор М150 (м3)</td>
+        <td></td>
+        <td></td>
+        <td> 1.3</td>
+
+
+</table>
+
+
+{% endblock %}
+

@@ -1,0 +1,20 @@
+table {
+    text-align:  center;
+    }
+
+h2 {
+    text-indent: 50px; /* Отступ первой строки в пикселах */
+    }
+
+img {
+    float: left; /* Выравнивание по ловому краю */
+    margin: 0px 10px 20px 0px; /* Отступы вокруг фотографии */
+   }
+
+.otstup {
+    margin-top: -3%; /* Отступ сверху */
+   }
+
+.pokazateli {
+    margin: 10px 50px 20px 0px; /* Отступы вокруг фотографии */
+}

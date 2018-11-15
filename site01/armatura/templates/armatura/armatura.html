@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Подключение статистических файлов -->
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Арматура</title>
+    <!-- Bootstrap css-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"
+          type="text/css">
+    <!-- Bootstrap подключение своих CSS-->
+    <!--<link type="text/css" href="{% static 'sortament/css/mine.css' %}" rel="stylesheet">-->
+</head>
+<body>
+
+<div class="jumbotron">
+    <label class="container">
+
+        <a href="{% url 'index' %}">Вернуться на главную</a>
+
+        <p>Сортамент арматуры</p>
+        <!--
+         <table class="table-sm" border="2" width="10%" cellpadding="5" >
+            <tr>
+            <th>Диаметр</th>
+            <th>Вес</th>
+            <th>Площадь</th>
+           </tr>
+
+        {% for armatura in vs_table %}
+            <tr>
+
+               <td>{{ armatura.Dim }}</td>
+               <td>{{ armatura.Ves }}</td>
+               <td>{{ armatura.Plosh }}</td>
+
+            </tr>
+        {% endfor %}
+
+         </table>
+
+        -->
+        <br>
+
+        <form action="input/" method="post">
+            {% csrf_token %}
+            <label>Диаметр арматуры<input class="col-md-8" name="poisk_dim"
+                                          type="text" size="5" value=""></label>
+            <button type="submit" class="btn btn-primary">Найти</button>
+        </form>
+
+
+        {% block content %}
+
+        {% endblock %}
+
+        </table>
+
+</div>
+
+<div class="container">
+    <hr>
+    &copy; Все права защищены 2018
+</div>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Включают все скомпилированные плагины (ниже), или включать отдельные файлы по мере необходимости -->
+<!-- Bootstrap js-->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

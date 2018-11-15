@@ -1,0 +1,20 @@
+{% extends "base_01.html" %}
+
+{% block title %}
+Список ГОСТов
+{% endblock %}
+
+{% block content %}
+<br>
+<br>
+{% for gost_sort in gost_sortamenta %}
+<ul>
+    <li><a href="{% url 'perehod_na_gost' sortamenta_id=gost_sort.id %}">{{ gost_sort.GOST }}</a></li>
+
+</ul>
+<!--<li>{{ gost_sort.type }}<ul>-->
+</ul>
+{% endfor %}
+
+{% endblock %}
+

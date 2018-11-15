@@ -1,0 +1,25 @@
+{% extends "base_01.html" %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Главная страница</h1>
+        <p>WEB-приложение для расчета строительных конструкций</p>
+        <p>Справочник конструктора</p>
+        <!--<a href="/spisok/" class="btn btn-primary">Доступные расчеты</a>-->
+        <a href="{% url 'spisok_ras' %}" class="btn btn-primary">Доступные
+            расчеты</a>
+        <a href="" class="btn btn-primary">Файлы для скачивания</a>
+        <a href="" class="btn btn-primary">Книги по строительству</a>
+        <a href="{% url 'prodavcy_na_polki' %}" class="btn btn-primary">Продавцы
+            на своей полки</a>
+        <a href="{% url 'pec_kamery' %}" class="btn btn-primary">Спецификация</a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+
+{% extends "balka/balka.html" %}
+
+{% block content %}
+<br xmlns="http://www.w3.org/1999/html">
+
+<p> Максимальный момент в балке: <kbd>M<sub>max</sub>=ql<sup>2</sup>/8={{ max_moment }} кН*м </kbd></p>
+<p> Длина балки (м): {{ dlina }}</p>
+<p> Величена распределенной нагрузки (кН/м): {{ nagruzka }} </p>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base_01.html" %}
+
+{% block title %}
+Продавцы и их товар
+{% endblock %}
+
+{% block content %}
+<br>
+<br>
+
+
+<h2>{{ Name_prodavca.Name }}</h2>
+<br>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-5">
+            <caption>Таблица товара {{ Name_prodavca.Name }}</caption>
+            <br>
+            <br>
+            <table border="3" bordercolor="black"
+                   class="table table-hover table-sm">
+                <tr>
+                <th>Товар</th>
+                <th>Цена</th>
+                <th>Дата поступления</th>
+                </tr>
+                <tr>
+                    {% for tovar_pro in tovar_prodavca %}
+                    <td>{{ tovar_pro.Nazvanie_tovara }}</td>
+                    <td>{{ tovar_pro.price }}</td>
+                    <td>{{ tovar_pro.Data }}</td>
+                    </tr>
+                    {% endfor %}
+
+            </table>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

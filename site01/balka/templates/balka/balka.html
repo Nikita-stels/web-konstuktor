@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    {% load staticfiles %}
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    <title>Балка</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <label class="container">
+
+            <a href="{% url 'index' %}">Вернуться на главную</a>
+            <br>
+            <br>
+            <img src="{% static 'balka/image/02.jpg' %}" class="img-thumbnail">
+            <br>
+
+            <form action="/izgib_balki/balkaras/" method="post">
+                {% csrf_token %}
+                <label>Длина l (м) <input class="col-md-8" name="dlina" type="text"
+                                          size="5" value=""></label>
+                <br>
+                <label>Нагрузка q (кН/м) <input class="col-md-8" name="nagruzka"
+                                                type="text" size="5"
+                                                value=""></label>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-primary">Посчитать</button>
+            </form>
+
+            {% block content %}
+            {% endblock %}
+        </label>
+
+    </div>
+<div class="container">
+    <hr>
+    &copy; Все права защищены 2018
+</div>
+</body>
+</html>

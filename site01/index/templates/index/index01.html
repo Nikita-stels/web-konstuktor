@@ -1,0 +1,21 @@
+{% extends "base_01.html" %}
+
+{% block title %}
+Список расчетов
+{% endblock %}
+
+{% block content %}
+<br>
+{% for spisok_raschetov in spisok_raschetov_r %}
+<ul>
+    <!--<li>{{ gost_sort.type }}<ul>-->
+     <li><a href="{{spisok_raschetov.url_rascheta}}">{{ spisok_raschetov.Nazvanie }}</a></li>
+
+
+
+     </ul>
+</ul>
+
+{% endfor %}
+
+{% endblock %}

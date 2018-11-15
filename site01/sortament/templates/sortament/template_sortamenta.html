@@ -1,0 +1,128 @@
+{% extends "base_01.html" %}
+
+{% block title %}
+{{ naz_i_img_gostov.GOST }}
+{% endblock %}
+
+{% block content %}
+<br>
+<br>
+
+<!--Заголовок-->
+<h3>{{ naz_i_img_gostov.GOST }}</h3>
+<!--Изображение-->
+<!--<div class="container">-->
+<!--<img src="{{ naz_i_img_gostov.img_gost.url }}" alt="{{naz_i_img_gostov.Gost_naz}}" width="300"-->
+<!--height="300" class="img-thumbnail" >-->
+<!--</div>-->
+
+<div class="row">
+    <div class="col-md-4"><img src="{{ naz_i_img_gostov.img_gost.url }}"
+                               alt="{{naz_i_img_gostov.Gost_naz}}" width="300"
+                               height="300" class="img-thumbnail">
+    </div>
+
+    <div class="col-md-3 pokazateli">
+        <!--Решить как выводить буквенные показатели-->
+        <p><b>a</b> - переменная_01</p>
+        <p><b>b</b> - переменная_02</p>
+        <p><b>c</b> - переменная_03</p>
+        <p><b>d</b> - переменная_04</p>
+        <p><b>e</b> - переменная_05</p>
+    </div>
+
+</div>
+
+{% if table_10704_91 %}
+
+<!--Таблица начало-->
+<div class="row">
+    <div class="col-md-12">
+        <!--Труба-->
+        <table border="1" width="100%" cellpadding="5">
+            <tr>
+                <th>verbose_name</th>
+                <th>verbose_name</th>
+                <th>verbose_name</th>
+                <th>verbose_name</th>
+                <th>verbose_name</th>
+                <th>verbose_name</th>
+                <th>verbose_name</th>
+                <th>verbose_name</th>
+            </tr>
+            {% for table_10704_91 in table_10704_91 %}
+            <tr>
+                <td>{{ table_10704_91.Diametr }}</td>
+                <td>{{ table_10704_91.Tolshuna_stenki }}</td>
+                <td>{{ table_10704_91.Ploshad_poperechnogo_sech }}</td>
+                <td>{{ table_10704_91.Moment_inercii }}</td>
+                <td>{{ table_10704_91.Moment_soprotivleniya }}</td>
+                <td>{{ table_10704_91.Statisticheskiy_moment }}</td>
+                <td>{{ table_10704_91.Radius_inercii }}</td>
+                <td>{{ table_10704_91.Massa_v_pog_metre }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+<!--Таблица конец-->
+
+{% elif table_8239_89 %}
+<div class="row">
+<div class="col-md-12">
+    <!--Труба-->
+    <table border="1" width="100%" cellpadding="5">
+        <tr>
+            <th>verbose_name</th>
+            <th>verbose</th>
+            <th>verbose</th>
+            <th>verbose</th>
+            <th>verbose</th>
+            <th>verbose</th>
+            <th>verbose</th>
+            <th>verbose</th>
+            <th>verbose</th>
+            <th>verbose</th>
+            <th>verbose</th>
+            <th>verbose</th>
+            <th>verbose</th>
+            <th>verbose</th>
+            <th>verbose</th>
+            <th>verbose</th>
+        </tr>
+        {% for table_8239_89 in table_8239_89 %}
+        <tr>
+            <td>{{ table_8239_89.nomer_dvutavra }}</td>
+            <td>{{ table_8239_89.vysota_h }}</td>
+            <td>{{ table_8239_89.shirina_pilki_b }}</td>
+            <td>{{ table_8239_89.tolshina_stenki_s }}</td>
+            <td>{{ table_8239_89.srednyaya_tolsina_polki_t }}</td>
+            <td>{{ table_8239_89.radius_vnutrennego_zakrugleniya_R }}</td>
+            <td>{{ table_8239_89.radius_zakrugleniya_polki_r }}</td>
+            <td>{{ table_8239_89.ploshad_poer_sech_A }}</td>
+            <td>{{ table_8239_89.massa_m }}</td>
+            <td>{{ table_8239_89.mom_iner_Ix }}</td>
+            <td>{{ table_8239_89.mom_sopr_Wx }}</td>
+            <td>{{ table_8239_89.radius_iner_i_x }}</td>
+            <td>{{ table_8239_89.stat_mom_polu_sech_Sx }}</td>
+            <td>{{ table_8239_89.mom_iner_Iy }}</td>
+            <td>{{ table_8239_89.mom_sopr_Wy }}</td>
+            <td>{{ table_8239_89.radius_iner_i_y }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</div>
+
+{% endif %}
+
+<!--Таблица начало-->
+
+<!--Таблица конец-->
+
+<!--Буквенное обозначение-->
+
+<!--Таблица из БД-->
+
+
+{% endblock %}

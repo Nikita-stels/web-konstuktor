@@ -1,0 +1,22 @@
+{% extends "base_01.html" %}
+
+{% block title %}
+Страница продавцов на полки
+{% endblock %}
+
+{% block content %}
+<br>
+<br>
+
+{% for prod in prodavcy_na_polki %}
+
+<ul>
+    <li><a href="{% url 'tovar_prodavca' id_prodavca=prod.id %}">{{ prod.Name }}</a></li>
+
+</ul>
+<!--<li>{{ gost_sort.type }}<ul>-->
+</ul>
+
+{% endfor %}
+
+{% endblock %}
