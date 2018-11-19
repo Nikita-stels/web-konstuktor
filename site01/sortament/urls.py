@@ -7,7 +7,8 @@ from .views import *
 
 urlpatterns = [
 
-    path('', sortament, name='sortament'),
+    #path('', sortament, name='sortament'),
+    path('', Sortament.as_view(), name='sortament'),
     re_path(r'^(?P<sortamenta_id>\d+)/$', perehod_na_gost, name='perehod_na_gost'),
 
     # Устаревшее
